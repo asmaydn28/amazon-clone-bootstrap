@@ -1,0 +1,55 @@
+body{
+    overflow-x: hidden;
+}
+.navbar{
+    white-space: nowrap;
+    background-color: #121921;
+}
+
+.hover-shadow:hover{
+    outline: 1px solid white;
+}
+
+.carousel-control-next-icon{
+    margin-left: 90%;
+    margin-bottom: 90%;
+}
+
+.carousel-control-prev-icon{
+    margin-bottom: 90%;
+    margin-right: 90%;
+}
+
+.card{
+    border: none;
+    border-radius: 0%;
+    height: 100%;
+}
+
+.cardlar{
+    position: relative;
+    margin-top: -25%;
+}
+
+footer div.footer-link ul li a:hover{
+    text-decoration: underline !important;
+}
+
+.footer-link2 a:hover{
+    text-decoration: underline !important;
+}
+.under-navbar{
+    background-color: #232f3f;
+    overflow-x: auto; 
+    white-space: nowrap; 
+}
+.under-navbar .row {
+  flex-wrap: nowrap;
+}
+.under-navbar .col-auto {
+  display: inline-block; 
+  white-space: nowrap;
+}
+.col-auto a:hover{
+outline: 1px solid white; ;
+}

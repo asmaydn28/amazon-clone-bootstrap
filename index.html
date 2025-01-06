@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Amazon Clone</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bg-light">
+  <!-- navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand hover-shadow py-2 px-1" href="index.html">
+          <img src="img/amazon_logo.png" alt="amazon_logo" style="height: 30px;" class="mt-1">
+          <span class="text-white small">.com.tr</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+
+          <div class="hover-shadow p-1">
+            <a class="d-flex align-items-center text-white text-decoration-none" aria-current="page" href="#">
+              <i class="fa-solid fa-location-dot" style="color: #ffffff;"></i>
+              <div class="ms-2">
+                <div>Teslimat Konumu</div>
+                <div>Konum Seç</div>
+              </div>
+            </a>
+          </div>
+
+          <div class="d-flex mx-2 hover-shadow d-lg-inline-flex d-none" style="width: 100%;">
+            <select class="form-select w-auto rounded-0" aria-label="Default select example">
+              <option selected>Tüm Kategoriler</option>
+              <option value="1">Bilgisayar</option>
+              <option value="2">Bahçe</option>
+              <option value="3">Ev Aletleri</option>
+            </select>
+            <input type="text" class="form-control rounded-0" placeholder="Amazon.com.tr araması yapın">
+            <button class="btn btn-warning rounded-0">
+              <i class="fa fa-search"></i>
+            </button>
+          </div>
+
+          <div class="dropdown hover-shadow">
+            <a class="btn btn-black text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="small">Merhaba,Giriş yapın</span><br>
+              <span class="small">Hesap ve Listeler</span>
+            </a>
+          
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+
+          <div class="hover-shadow p-2">
+            <a href="#" class="nav-link text-white">
+              <span>İadeler</span><br>
+              <span>ve Siparişler</span>
+            </a>
+          </div>
+
+          <div class="hover-shadow p-2">
+            <a href="#" class="nav-link text-white d-flex align-items-center">
+              <i class="fa-solid fa-cart-shopping me-2 fs-2" style="color: #ffffff;"></i>
+              <div>
+                <span class="small">Alışveriş</span><br>
+                <span class="small">Sepeti</span>
+              </div>
+            </a>
+          </div>
+
+        </div>
+  </nav>
+<!-- navbarın altı -->
+ <div class="under-navbar">
+  <div class="container-fluid"  >
+    <div class="row">
+
+      <div class="col-auto px-2">
+        <a class="text-white text-decoration-none px-2" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+          Tümü
+        </a>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">Merhaba Giriş Yapın</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              <h5>Öne Çıkablar</h5>
+              <a href="#" class="text-decoration-none text-dark d-block">Çok Satanlar</a>
+              <a href="#" class="text-decoration-none text-dark d-block">Yeni Çıkanlar</a>
+              <a href="#" class="text-decoration-none text-dark d-block">En İyi Performans Gösterenler</a>
+              <hr>
+              <h5>Kategoriye Göre Alışveriş Yap</h5>
+              <a href="#" class="text-decoration-none text-dark d-block">Ayakkabı</a>
+              <a href="#" class="text-decoration-none text-dark d-block">Bahçe</a>
+              <a href="#" class="text-decoration-none text-dark d-block">Bebek</a>
+              <a href="#" class="text-decoration-none text-dark d-block">Bilgisayar</a>
+            </div>
+          </div>
+        </div>
+       </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Günün Fırsatları</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Çok Satanlar</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a class="text-white text-decoration-none dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Prime
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">Amazon Prime</a></li>
+        </ul>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Yeni Çıkanlar</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Elektronik</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Moda</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Hediye Fikirleri</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Kitap</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Bilgisayar</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Hediye Kartları</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Video Oyunu ve Konsol</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Satış Yap</a>
+      </div>
+      <div class="col-auto px-2 ">
+        <a href="/" class="text-decoration-none text-white">Amazon Ayrıcalıkları</a>
+      </div>
+    </div>
+  </div>
+  
+ </div>
+ 
+  <!-- carousal ekranı -->
+  <section>
+    <div id="carouselExample" class="carousel slide">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="img/carousel-1.jpg" class="d-block w-100" alt="carousel-1">
+        </div>
+        <div class="carousel-item">
+          <img src="img/carousel-2.jpg" class="d-block w-100" alt="carousel-2">
+        </div>
+        <div class="carousel-item">
+          <img src="img/carousel-3.jpg" class="d-block w-100" alt="carousel-3">
+        </div>
+      
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- careusel ıcındekı card -->
+  <section>
+    <div class="container-fluid">
+      <div class="row cardlar w-100 mx-auto g-3">
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Ev ve yaşam ürünlerinde fırsatlar</h5>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/mutfak.jpg" class="img-fluid w-100 " alt="mutfak">
+                    <div>mutfak</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/evveyasam.jpg" class="img-fluid w-100" alt="evveyasam">
+                    <div>Ev ve Yaşam</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/oyuncak.jpg" class="img-fluid w-100 " alt="oyuncak">
+                    <div>Oyuncak</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/sporveoutdoor.jpg" class="img-fluid w-100 " alt="sporveoutdoor">
+                    <div>Spor ve Outdoor</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">İkinci el ürünlerde avantajlı fiyatlar</h5>
+              <a href="#"><img src="img/kutu.jpg" alt="kutu" class="img-fluid w-100"></a>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Her gün kazandıran Amazon fırsatları</h5>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/kuponlar.jpg" class="img-fluid w-100" alt="kuponlar">
+                    <div>Kuponlar</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/cokalazode.jpg" class="img-fluid w-100" alt="cokalazode">
+                    <div>Çok al Az Öde</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/gününfırsatı.jpg" class="img-fluid w-100" alt="gününfırsatları">
+                    <div>Günün Fırsatları</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/gülümsetenfiyat.jpg" class="img-fluid w-100" alt="gülümsetenfiyatlar">
+                    <div>Gülümseten Fiyatlar</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Prime ile bedava kargo ve eğlence. Ayda 39 TL</h5>
+              <img src="img/uzaylı.jpg" alt="uzaylı" class="img-fluid w-100">
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- careusel alındakı cardlar -->
+  <section>
+    <div class="container-fluid mt-4">
+      <div class="row cardlar2 w-100 mx-auto g-3">
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Ev ve yaşam ürünlerinde fırsatlar</h5>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/kadın.jpg" class="img-fluid w-100 " alt="kadın">
+                    <div>Kadın</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/erkek.jpg" class="img-fluid w-100" alt="erkek">
+                    <div>Erkek</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/kızcocuk.jpg" class="img-fluid w-100 " alt="kız cocuk">
+                    <div>Kız Çocuk</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/erkekcocuk.jpg" class="img-fluid w-100 " alt="erkek cocuk">
+                    <div>Erkek Çocuk</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Teslimat, iade ve fatura yöntemlerini keşfet</h5>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/hızlıkargo.jpg" class="img-fluid w-100" alt="hızlı kargo">
+                    <div>Hızlı Kargo</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/kolayiade.jpg" class="img-fluid w-100" alt="kolay iade">
+                    <div>Kolay İade</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/kurumsal fatura.jpg" class="img-fluid w-100" alt="Kurumsal Fatura">
+                    <div>Kurumsal Fatura</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/randevulu teslimat.jpg" class="img-fluid w-100" alt="randevulu teslimat">
+                    <div>Randevulu Teslimat</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Deprem bölgesindeki okullara destek ol</h5>
+              <a href="#"><img src="img/kutukalp.jpg" alt="kutu" class="img-fluid w-100"></a>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Prime ile bedava kargo, oyun, film ve dizi</h5>
+              <img src="img/tablet.jpg" alt="tablet" class="img-fluid w-100">
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Tüm Fırsatlar</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- öne cıkan fırsat ve magazalar -->
+  <section class="overflow-x-hidden">
+    <div class="container-fluid my-5">
+      <div class="px-5 shadow bg-white pt-3">
+        <span class="h4 me-3">Öne çıkan fırsat ve mağazalar</span>
+      <span><a href="#" class="text-decoration-none text-black-50">Tümünü Keşfet</a></span>
+      <div class="d-flex overflow-x-auto">
+        <div>
+          <a href="#">
+            <img src="img/resim1.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim2.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim3.png" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim4.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim5.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim6.png" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim7.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim8.png" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+        <div>
+          <a href="#">
+            <img src="img/resim9.jpg" alt="resim">
+          </a>
+        </div>
+      </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Günün fırsatları -->
+  <section class="overflow-x-hidden">
+    <div class="container-fluid">
+      <div class="px-5 shadow bg-white pt-3">
+        <span class="h4 me-3">Günün Fırsatları</span>
+      <span><a href="#" class="text-decoration-none text-black-50">Tüm Fırsatlar</a></span>
+      <div class="d-flex overflow-x-auto">
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img1.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img2.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img3.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img4.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img5.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img6.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img7.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img8.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img9.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img9.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img9.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img9.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img9.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+        <div>
+          <a href="#" class="text-decoration-none">
+            <img src="img/img9.jpg" style="height: 13rem;" alt="resim">
+            <div class="bg-danger text-white p-1 d-inline">Fırsat</div>
+            <div class="text-black">100.00 TL</div>
+            <div class="text-black">Amazon İndirim Ürünlerini Kaçırma</div>
+          </a>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- son cardlar -->
+  <section>
+    <div class="container-fluid mt-4">
+      <div class="row cardlar2 w-100 mx-auto g-3">
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Erkek t-shirt'lerde indirim</h5>
+              <a href="#"><img src="img/alt1.jpg" alt="kutu" class="img-fluid w-100"></a>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Alışverişse Başla</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Amazon Prime üyeliğin Maximiles Black’ten</h5>
+              <a href="#"><img src="/img/alt2.jpg" alt="kutu" class="img-fluid w-100"></a>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Kampanya Koşullarını İncele</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Cep telefonu aksesuarlarını keşfet</h5>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/alt3.jpg" class="img-fluid w-100" alt="hızlı kargo">
+                    <div>Şarj Aletleri</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/alt4.jpg" class="img-fluid w-100" alt="kolay iade">
+                    <div>Powerbank'ler</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/alt5.jpg" class="img-fluid w-100" alt="Kurumsal Fatura">
+                    <div>Araç Aksesuarları</div>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <div>
+                    <a href="#" class="text-decoration-none text-black">
+                      <img src="img/alt6.jpg" class="img-fluid w-100" alt="randevulu teslimat">
+                    <div>Kılıflar</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Kategoriyi Keşfet</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-lg-3 col-sm-6 col-12">
+          <div class="card shadow">
+            <div class="card-body">
+              <h5 class="card-title">Mutfak aletlerinde indirim</h5>
+              <img src="img/alt7.jpg" alt="tablet" class="img-fluid w-100">
+              <div class="py-2">
+                <a href="#" class="text-decoration-none text-black">Alışverişe Başla</a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+
+  <!-- kişiye özel öneri -->
+  <section class="bg-white">
+    <div class="container-fluid py-3">
+      <hr>
+      <div class="text-center">
+        <h3>Kişiye özel önerileri görün</h3>
+        <button type="button" class="btn btn-warning px-5 rounded-5 mb-2">Sign in</button>
+        <p class="small">Yeni Müşteri misiniz? <a href="#">Üye olun</a></p>
+      </div>
+      <hr>
+    </div>
+    <button type="button" class="btn w-100 rounded-0 text-white" style="background-color: #364759;">Başa Dön</button>
+  </section>
+
+  <!-- footer -->
+  <footer class="bg-dark">
+    <div class="container">
+      <div class="row footer-link justify-content-around py-5">
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5 class="text-white">Hakkımızda</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-white">Kariyer</a></li>
+            <li><a href="#" class="text-decoration-none text-white">İletişim</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Bilgi Topulumu<br>Hizmetleri</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Amazon Science</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5 class="text-white">Bizimle Para Kazanın</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-white">Markalarınız oluşturun ve <br> Koruyun </a></li>
+            <li><a href="#" class="text-decoration-none text-white">Amazon'da Satış Yapın</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Amazon'a Tedarik</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Ürünlerinizin Reklamını <br> Yapın </a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5 class="text-white">Amazon Ödeme Araçları</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-white">Kredi Kartı</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Taksitli Ödeme</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6 col-12">
+          <h5 class="text-white">Size Yardımcı Olalım</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-decoration-none text-white">COVID-19 ve Amazon</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Kargoları Takip Edin veya <br>
+              Siparişleri Görüntüleyin</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Teslimat Ücretleri ve <br>  Politikaları</a></li>
+            <li><a href="#" class="text-decoration-none text-white">İadeler</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Geri Dönüşüm</a></li>
+            <li><a href="#" class="text-decoration-none text-white">İade Çağrıları ve Ürün <br>  Güvenliği Uyarıları</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Amazon Mobil Uygulaması</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Müşteri Hizmetleri</a></li>
+            <li><a href="#" class="text-decoration-none text-white">Erişilebilirlik</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <hr class="text-white">
+
+    <div class="container py-4">
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="mx-3"><img src="img/amazon_logo.png" alt="amazon" style="height: 30px;"></div>
+        <div class="mx-3"><span class="text-white btn btn-secondary">Türkiye</span></div>
+      </div>
+    </div>
+
+    <div class="bg-black">
+      <div class="row justify-content-around text-center py-3 footer-link2">
+        <div class="col-sm-4 col-12 py-sm-0 py-3">
+          <div>
+            <a href="#" class="text-decoration-none text-white small">
+              <b>Amazon Web Services</b>  <br>
+              Ölçeklenebilir Bulut <br>
+              Bilgi İşlem Hizmetleri
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4 col-12 py-sm-0 py-3">
+          <div>
+            <a href="#" class="text-decoration-none text-white">
+              <b>East Dane</b>  <br>
+              Tasarımcı Erkek Moda Ürünleri
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-4 col-12 py-sm-0 py-3">
+          <div>
+            <a href="#" class="text-decoration-none text-white">
+              <b>Shopbop</b> <br> 
+              Tasarım Ürünler <br>
+              Moda Markalar
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-link2">
+        <div class="d-flex justify-content-center flex-wrap">
+          <div class="me-3">
+            <a href="#" class="text-decoration-none small text-white">Kullanım ve Satış Koşulları</a>
+          </div>
+          <div class="me-3">
+            <a href="#" class="text-decoration-none small text-white">Aydınlatma Bildirimi</a>
+          </div>
+          <div class="me-3">
+            <a href="#" class="text-decoration-none small text-white">Çerezler Hakkında</a>
+          </div>
+          <div class="me-3">
+            <a href="#" class="text-decoration-none small text-white">İlgi Alanına Dayalı Tanıtımlar</a>
+          </div>
+          <div class="me-3">
+            <a href="#" class="text-decoration-none small text-white">İşlem Rehberi</a>
+          </div>
+        </div>
+        <div class="text-white text-center">© 1996-2024, Amazon.com, Inc. veya bağlı kuruluşları</div>
+      </div>
+    </div>
+  </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  </body>
+</html>
